@@ -23,6 +23,9 @@ let contaImg = 0;
 
 7 quando il contatore e uguale della lunghezza array delle img -1 aggiungi hide a next
 
+8 al click di prev tolgo hide al next
+9 al click di prev se il contatore e 0 aggiungo hide a prev
+
 */
   
 
@@ -68,7 +71,7 @@ btnPrev.classList.remove('hide');
 
 //7 
 
-if (contaImg > images.length - 1){
+if (contaImg === images.length - 1){
   btnNext.classList.add('hide');
 }
 
@@ -87,6 +90,12 @@ btnPrev.addEventListener('click', function ()){
   items[contaImg].classList.remove('hide');
   
   
-  
+  //8
+  btnNext.classList.remove('hide');
+
+  //9
+  if(contaImg ===0){
+    btnPrev.classList.add('hide')
+  }
   
   }
