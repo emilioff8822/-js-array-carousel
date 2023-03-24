@@ -1,0 +1,87 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+color: white
+}
+
+.mainwrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items:  center;
+}
+
+.container {
+  width: 60%;
+  height: 60%;
+  background-color: brown;
+}
+
+.slider {
+  position: relative;
+  height: 100%;
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider .btn-arrow{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: rgba(0, 0, 0, .5);
+  text-align: center;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+}
+.slider .btn-arrow:hover{
+  background-color: white;
+  color: red
+}
+
+.slider .btn-arrow.prev{
+  left: 10px;
+
+  /*left: 500px;
+  top: 5%; */
+
+}
+
+.slider .btn-arrow.next{
+  right: 10px;
+
+/*top: 90%;
+left: 500px; */
+
+}
+
+.slider .circles {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  text-align: center;
+}
+
+
+.slider .circles .circle{
+  display: inline-block;
+  margin: 0 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.slider .circles .circle.active{
+  background-color: white;
+}
