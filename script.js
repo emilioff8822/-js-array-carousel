@@ -17,7 +17,12 @@ let contaImg = 0;
 2 al primo item tolgo la classe hide
 3 al click next o prev aggiunge la classe item all elemento corrente in modo da farlo comparire
 4al lick next incrementa il contatore e a quell indice rimuovi hide
-4al lick next decrementa il contatore e a quell indice rimuovi hide
+5al lick next decrementa il contatore e a quell indice rimuovi hide
+
+6 bisogna nascondere il tasto prev di default e mostrarlo solo al click di next
+
+7 quando il contatore e uguale della lunghezza array delle img -1 aggiungi hide a next
+
 */
   
 
@@ -41,9 +46,11 @@ for (let i = 0; i < images.length; i++){
 //2 prendo gli item 
 // getElementsByClassName crea un array che contiene
 
+// 6
+btnPrev.classList.add('hide');
+
 const items = document.getElementsByClassName('item');
 items[contaImg].classList.remove('hide');
-
 
 
 btnNext.addEventListener('click', function ()){
@@ -56,6 +63,14 @@ contaImg++;
 
 items[contaImg].classList.remove('hide');
 
+//6
+btnPrev.classList.remove('hide');
+
+//7 
+
+if (contaImg > images.length - 1){
+  btnNext.classList.add('hide');
+}
 
 
 

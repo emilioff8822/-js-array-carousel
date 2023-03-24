@@ -36,7 +36,7 @@ color: white
   height: 100%;
 }
 
-.item.hide {
+.hide {
 display: none;
 }
 
