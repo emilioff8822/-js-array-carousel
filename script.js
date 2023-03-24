@@ -7,17 +7,24 @@ const images = [
 ]
 
 
+const itemsWrapper =document.querySelector('.items-wrapper')
+const btnNext = document.querySelector('.next');
+const btnPrev = document.querySelector('.prev');
+
 let contaImg = 0;
 /* 
 1 attraverso un ciclo stampo tutte le img in itemwrapper con la classe item
 2 al primo item tolgo la classe hide
+3 al click next o prev aggiunge la classe item all elemento corrente in modo da farlo comparire
+4al lick next incrementa il contatore e a quell indice rimuovi hide
+4al lick next decrementa il contatore e a quell indice rimuovi hide
 */
   
 
 
 //1
 
-const itemsWrapper =document.querySelector('.items-wrapper')
+
 
 for (let i = 0; i < images.length; i++){
  
@@ -25,7 +32,7 @@ for (let i = 0; i < images.length; i++){
   console.log(image)
   
   itemsWrapper.innerHTML =+ `
-  <img class="item" src="${image}">
+  <img class="item hide" src="${image}">
 
   `
 
@@ -35,4 +42,36 @@ for (let i = 0; i < images.length; i++){
 // getElementsByClassName crea un array che contiene
 
 const items = document.getElementsByClassName('item');
-items[2].classList.remove('item');
+items[contaImg].classList.remove('hide');
+
+
+
+btnNext.addEventListener('click', function ()){
+//3
+
+  items[contaImg].classList.add('hide');
+//4
+
+contaImg++;
+
+items[contaImg].classList.remove('hide');
+
+
+
+
+}
+
+btnPrev.addEventListener('click', function ()){
+  //3
+  
+    items[contaImg].classList.add('hide');
+  //4
+  
+  contaImg--;
+  
+  items[contaImg].classList.remove('hide');
+  
+  
+  
+  
+  }
