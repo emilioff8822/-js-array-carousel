@@ -1,7 +1,7 @@
 
-var images = [  "https://picsum.photos/500/300?random=1",  "https://picsum.photos/500/300?random=2",  "https://picsum.photos/500/300?random=3"];
-var currentImage = 0;
-var imgElement = document.querySelector(".slider img");
+let images = [  "https://picsum.photos/500/300?random=1",  "https://picsum.photos/500/300?random=2",  "https://picsum.photos/500/300?random=3"];
+let currentImage = 0;
+let imgElement = document.querySelector(".slider img");
 
 function prev() {
   currentImage--;
